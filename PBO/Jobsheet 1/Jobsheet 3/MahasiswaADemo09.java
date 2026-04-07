@@ -3,10 +3,12 @@ import java.util.Scanner;
 public class MahasiswaADemo09 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        MahasiswaA09[] arrayOfMahasiswa = new MahasiswaA09[3];
+        System.out.print("Masukkan Jumlah Mahasiswa : ");
+        int jumlah = Integer.parseInt(sc.nextLine());
+        MahasiswaA09[] arrayOfMahasiswa = new MahasiswaA09[jumlah];
         String dummy;
 
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < jumlah; i++) {
             arrayOfMahasiswa[i] = new MahasiswaA09();
 
             System.out.println("Masukkan Data Mahasiswa ke-" + (i + 1));
@@ -23,7 +25,7 @@ public class MahasiswaADemo09 {
         }
 
         
-        for(int i = 0; i < 3; i++) {
+        for(int i = 0; i < jumlah; i++) {
             System.out.println("Data Mahasiswa ke-" + (i + 1));
             arrayOfMahasiswa[i].cetakInfo();
         }
