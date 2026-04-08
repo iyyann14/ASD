@@ -4,11 +4,9 @@ public class TokoAksesorisMain09 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Scanner sc1 = new Scanner(System.in);
-        int dummy;
 
         System.out.print("Masukkan Jumlah Aksesoris : ");
-        int jumlah = sc.nextInt();
+        int jumlah = Integer.parseInt(sc.nextLine());
 
         TokoAksesoris09[] arrAks  = new TokoAksesoris09[jumlah];
 
@@ -23,15 +21,15 @@ public class TokoAksesorisMain09 {
             System.out.println("Masukkan Data Aksesoris ke-" + (i + 1));
 
             System.out.print("Nama      : ");
-            nama = sc1.nextLine();
+            nama = sc.nextLine();
             System.out.print("Kategori  : ");
-            kategori = sc1.nextLine();
+            kategori = sc.nextLine();
             System.out.print("Harga     : ");
-            harga = sc1.nextInt();
+            harga = Integer.parseInt(sc.nextLine());
             System.out.print("Terjual   : ");
-            terjual = sc1.nextInt();
+            terjual = Integer.parseInt(sc.nextLine());
             System.out.print("Stok      : ");
-            stok = sc.nextInt();
+            stok = Integer.parseInt(sc.nextLine());
 
             arrAks[i] = new TokoAksesoris09(nama, kategori, harga, terjual, stok);
         }
