@@ -3,15 +3,15 @@ public class MahasiswaCM09 {
     String nama;
     String prodi;
 
-    void MahasiswaCM09(String nim, String nama, String prodi) {
+    //CONSTRUCTOR MAHASISWA
+    MahasiswaCM09(String nim, String nama, String prodi) {
         this.nim = nim;
         this.nama = nama;
         this.prodi = prodi;
     }
 
+    //METHOD MENAMPILKAN DATA MAHASISWA
     void tampilkanInformasi() {
-        System.out.println("NIM: " + nim);
-        System.out.println("Nama: " + nama);
-        System.out.println("Prodi: " + prodi);
+        System.out.println("NIM : " + nim + " | Nama : " + nama + " | Prodi : " + prodi);
     }
 }

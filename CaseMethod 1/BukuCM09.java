@@ -1,17 +1,17 @@
 public class BukuCM09 {
     String kodeBuku;
     String judul;
-    String tahunTerbit;
+    int tahunTerbit;
     
-    void Buku09(String kodeBuku, String judul, String tahunTerbit) {
+    // CONSTRUCTOR BUKU
+    BukuCM09(String kodeBuku, String judul, int tahunTerbit) {
         this.kodeBuku = kodeBuku;
         this.judul = judul;
         this.tahunTerbit = tahunTerbit;
     }
 
+    //METHOD MENAMPILKAN DATA BUKU
     void tampilkanInformasi() {
-        System.out.println("Kode Buku: " + kodeBuku);
-        System.out.println("Judul: " + judul);
-        System.out.println("Tahun Terbit: " + tahunTerbit);
+        System.out.println("Kode Buku : " + kodeBuku + " | Judul : " + judul + " | Tahun Terbit : " + tahunTerbit);
     }
 }

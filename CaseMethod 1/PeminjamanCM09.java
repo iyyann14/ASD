@@ -1,18 +1,33 @@
-public class PeminjamanCM09 {
-    MahasiswaCM09[] mhs = new MahasiswaCM09[5];
-    BukuCM09[] buku = new BukuCM09[5];
-
-    public PeminjamanCM09(MahasiswaCM09[] mhs, BukuCM09[] buku) {
-        this.mhs = mhs;
-        this.buku = buku;
-    }
-    
+class PeminjamanCM09 {
+    MahasiswaCM09 mhs;
+    BukuCM09 buku;
     int lamaPinjam;
+    int denda;
 
-
-    void Peminjaman09(int mhs, int buku, int lamaPinjam) {
-        this.lamaPinjam = lamaPinjam;
+    // CONSTRUCTOR PEMINJAMAN
+    PeminjamanCM09(MahasiswaCM09 mhs, BukuCM09 buku, int lamaPinjam) {
         this.mhs = mhs;
         this.buku = buku;
+        this.lamaPinjam = lamaPinjam;
+        hitungDenda();
+    }
+
+    //METHOD MENGHITUNG DENDA
+    void hitungDenda() {
+        int batas = 5;
+        int dendaPerHari = 2000;
+
+        if (lamaPinjam > batas) {
+            int telat = lamaPinjam - batas;
+            denda = telat * dendaPerHari;
+        } else {
+            denda = 0;
+        }
+    }
+
+    //METHOD MENAMPILKAN DATA PEMINJAMAN 
+    void tampil() {
+        System.out.println(mhs.nim + " | " + mhs.nama + " | " + buku.judul +
+                " | " + lamaPinjam + " hari | Denda: " + denda);
     }
 }
