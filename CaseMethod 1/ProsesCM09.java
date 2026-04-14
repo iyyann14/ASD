@@ -90,7 +90,4 @@ public class ProsesCM09 {
         }
     }
 
-    public static void main(String[] args) {
-        ProsesCM09 proses = new ProsesCM09();
-    }
 }
