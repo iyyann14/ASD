@@ -1,6 +1,10 @@
 public class MahasiswaBerprestasi09 {
-    Mahasiswa09[] listMHhs = new Mahasiswa09[5];
+    Mahasiswa09[] listMHhs;
     int idx;
+
+    public MahasiswaBerprestasi09(int size) {
+        listMHhs = new Mahasiswa09[size];
+    }
 
     void tambah(Mahasiswa09 m) {
         if (idx < listMHhs.length) {
@@ -12,15 +16,15 @@ public class MahasiswaBerprestasi09 {
     }
 
     void tampil() {
-        for (Mahasiswa09 m : listMHhs) {
-            m.tampilkanInformasi();
+        for (int i = 0; i < idx; i++) {
+            listMHhs[i].tampilkanInformasi();
             System.out.println("-----------------------");
         }
     }
 
     void bubbleSort() {
-        for (int i = 0; i < listMHhs.length - 1; i++) {
-            for (int j = 0; j < listMHhs.length - i - 1; j++) {
+        for (int i = 0; i < idx - 1; i++) {
+            for (int j = 0; j < idx - i - 1; j++) {
                 if (listMHhs[j].ipk < listMHhs[j + 1].ipk) {
                     Mahasiswa09 temp = listMHhs[j];
                     listMHhs[j] = listMHhs[j + 1];
@@ -31,9 +35,9 @@ public class MahasiswaBerprestasi09 {
     }
 
     void selectionSort() {
-        for (int i = 0; i < listMHhs.length - 1; i++) {
+        for (int i = 0; i < idx - 1; i++) {
             int idxMin = i;
-            for (int j = i + 1; j < listMHhs.length; j++) {
+            for (int j = i + 1; j < idx; j++) {
                 if (listMHhs[j].ipk < listMHhs[idxMin].ipk) {
                     idxMin = j;
                 }
@@ -45,7 +49,7 @@ public class MahasiswaBerprestasi09 {
     }
 
     void insertionSort() {
-        for (int i = 1; i < listMHhs.length; i++) {
+        for (int i = 1; i < idx; i++) {
             Mahasiswa09 temp = listMHhs[i];
             int j = i;
             while (j > 0 && listMHhs[j - 1].ipk < temp.ipk) {
