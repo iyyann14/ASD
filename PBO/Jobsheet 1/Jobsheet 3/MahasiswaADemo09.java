@@ -3,29 +3,42 @@ import java.util.Scanner;
 public class MahasiswaADemo09 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        MahasiswaA09[] arrayOfMahasiswa = new MahasiswaA09[3];
+        System.out.print("Masukkan Jumlah Mahasiswa : ");
+        int jumlah = Integer.parseInt(sc.nextLine());
+        MahasiswaBerprestasi09 list = new MahasiswaBerprestasi09(jumlah);
         String dummy;
 
-        for(int i = 0; i < 3; i++) {
-            arrayOfMahasiswa[i] = new MahasiswaA09();
+        for(int i = 0; i < jumlah; i++) {
+            MahasiswaA09 m = new MahasiswaA09();
 
             System.out.println("Masukkan Data Mahasiswa ke-" + (i + 1));
             System.out.print("NIM : ");
-            arrayOfMahasiswa[i].nim = sc.nextLine();
+            m.nim = sc.nextLine();
             System.out.print("Nama : ");
-            arrayOfMahasiswa[i].nama = sc.nextLine();
+            m.nama = sc.nextLine();
             System.out.print("Kelas : ");
-            arrayOfMahasiswa[i].kelas = sc.nextLine();
+            m.kelas = sc.nextLine();
             System.out.print("IPK : ");
             dummy = sc.nextLine();
-            arrayOfMahasiswa[i].ipk = Float.parseFloat(dummy);
+            m.ipk = Float.parseFloat(dummy);
+            list.tambah(m);
             System.out.println("----------------------------------");
         }
 
         
-        for(int i = 0; i < 3; i++) {
-            System.out.println("Data Mahasiswa ke-" + (i + 1));
-            arrayOfMahasiswa[i].cetakInfo();
-        }
+        System.out.println("Data Mahasiswa sebelum sorting: ");
+        list.tampil();
+
+        System.out.println("Data Mahasiswa setelah bubbleSort (IPK Desc): ");
+        list.bubbleSort();
+        list.tampil();
+
+        System.out.println("Data Mahasiswa setelah selectionSort (IPK Desc): ");
+        list.selectionSort();
+        list.tampil();
+
+        System.out.println("Data Mahasiswa setelah insertionSort (IPK Desc): ");
+        list.insertionSort();
+        list.tampil();
     }
 }
